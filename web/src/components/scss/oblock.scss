@@ -1,0 +1,214 @@
+@use "./global.scss" as *;
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.oblock {
+    @include flex-center();
+    width: 100vw;
+    height: 100vh;
+    padding: 5em;
+}
+
+.roach {
+    // @include flex-center();
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: lighten($odd, 7%);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.goverment {
+    // height: 100%;
+    // width: 100%;
+    grid-column: 2 /3;
+    background-color: transparent;
+    text-align: center;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 40px;
+    justify-content: center;
+}
+
+.sugar {
+    // width: 100%;
+    // align-items: flex-start;
+    z-index: 100;
+    background-color: transparent;
+}
+
+.bang {
+    // background-color: green
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.pop {
+    text-align: center;
+    color: darken($odd, 10%);
+    color: $background-color;
+    background-color: transparent;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: solid $border-dull 3px;
+    transition-duration: 0.5s;
+}
+
+.realsmoker {
+    z-index: 99;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    object-fit: contain;
+    background-color: transparent;
+    cursor: pointer;
+    transition-duration: .75s;
+}
+
+.settings-change-profile-picutre-menu {
+    border-radius: 15px;
+    grid-column: 3/3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    background-color: lighten($odd, 1%);
+    text-align: center;
+}
+
+.settings-change-profile-picutre-menu-label {
+    background-color: transparent;
+    color: $background-color;
+}
+
+.settings-change-profile-picutre-menu-input {
+    outline: none;
+    background-color: lighten($odd, 1%);
+    border: 2px solid darken($border-dull, 10%);
+    color: lighten($background-color, 10%);
+    text-align: center;
+    padding: 5px;
+    margin: 10px;
+    font-size: 12px;
+    height: 30px;
+    width: 250px;
+    border-radius: 8px;
+    transition-duration: 0.2s;
+}
+
+.settings-change-profile-picutre-menu-submit {
+    color: $background-color;
+    background-color: darken($odd, 10%);
+    width: 50px;
+    border-radius: 20px;
+    transition-duration: 0.5s;
+    border: 1px $background-color solid;
+}
+
+.settings-change-user-name-menu {
+    @include flex-center();
+    border-radius: 15px;
+    flex-direction: column;
+    padding: 10px;
+    gap: 15px;
+    background-color: lighten($odd, 1%);
+    text-align: center;
+}
+
+.settings-change-user-name-menu-label {
+    background-color: transparent;
+    color: $background-color;
+}
+
+.settings-change-user-name-menu-input {
+    outline: none;
+    background-color: lighten($odd, 1%);
+    border: 2px solid darken($border-dull, 10%);
+    color: $background-color;
+    text-align: center;
+    padding: 5px;
+    margin: 10px;
+    font-size: 12px;
+    height: 30px;
+    width: 100px;
+    border-radius: 8px;
+    transition-duration: 0.2s; 
+}
+
+.settings-change-user-name-menu-submit {
+    color: $background-color;
+    background-color: darken($odd, 10%);
+    width: 80px;
+    border-radius: 20px;
+    transition-duration: 0.5s;
+    border: 1px $background-color solid; 
+}
+
+.settings-go-back {
+    padding-top: 3px;
+    padding-left: 7px;
+    position: absolute;
+    cursor: pointer;
+    transition-duration: 400ms;
+}
+
+.pop:hover {
+    border: solid lighten($border-dull, 10%) 2px;
+    background-color: darken($odd, 10%);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); 
+}
+
+.settings-go-back:hover {
+    color: darken($odd, 10%);
+}
+
+.settings-change-profile-picutre-menu-submit:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); 
+}
+
+.settings-change-profile-picutre-menu-input:hover {
+    background-color: darken($background-color, 5%);
+    color: lighten($odd, 10%);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.settings-change-profile-picutre-menu-input:focus {
+    border: 2px solid $text-1;
+}
+
+.settings-change-user-name-menu-input:hover {
+    background-color: darken($background-color, 5%);
+    color: lighten($odd, 10%);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); 
+}
+
+.settings-change-user-name-menu-input:focus {
+    border: 2px solid $text-1;
+}
+
+.settings-change-user-name-menu-submit:hover {
+    background-color: darken($background-color, 5%);
+    color: lighten($odd, 10%);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); 
+}
+  
+.realsmoker:hover {
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
+    filter: gray;
+    -webkit-filter: grayscale(30%);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}

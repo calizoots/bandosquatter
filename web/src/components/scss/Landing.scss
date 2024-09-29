@@ -1,0 +1,68 @@
+@use "./global.scss" as *;
+
+* {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: $background-color;
+  color: darken($text-1, 10%);
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.realskengman {
+  max-height: 200px;
+  max-width: 200px;
+  width: auto;
+  height: auto;
+}
+
+.login-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-input {
+  outline: none;
+  border: 2px solid darken($border-dull, 10%);
+  text-align: center;
+  padding: 5px;
+  margin: 10px;
+  width: 150px;
+  border-radius: 8px;
+  transition-duration: 0.2s;
+}
+
+.login-input:focus {
+  border: 2px solid $text-1;
+}
+
+.login-input:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.login-button {
+  border: 1px darken($background-accent, 10%) solid;
+  background-color: $background-accent;
+  border-radius: 8px;
+  margin-top: 3px;
+  padding: 3px 15px;
+  transition-duration: 0.5s;
+}
+
+.login-button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.34), 0 17px 50px 0 rgba(0,0,0,0.35);
+  background-color: darken($background-accent, 25%);
+  border: 1px solid darken($background-accent, 25%);
+}

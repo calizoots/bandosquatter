@@ -1,0 +1,43 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+model MusicFile {
+  id                 Int          @id @default(autoincrement())
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+  fileName          String
+  title             String       
+  artist            String
+  album             String
+  albumArt          String
+  url               String        @unique
+  ownerUsername     String
+  playlists        Playlist[]     @relation("PlaylistSongs")
+  owner              User         @relation(fields: [ownerUsername], references: [username])
+}
+
+model Playlist {
+  id                 Int          @id @default(autoincrement())
+  title             String        @unique
+  picture           String        @default("https://i1.sndcdn.com/artworks-KrYtFb4mGC7Ui361-O1xnGA-t500x500.jpg")
+  songs            MusicFile[]    @relation("PlaylistSongs")
+  ownerUsername     String
+  owner              User         @relation(fields: [ownerUsername], references: [username])
+}
+
+model User {
+  id                Int           @id @default(autoincrement())
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+  profilePicture    String        @default("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMjLJ5TdKWdrENoOU6AWEWv8QNoJ1UhUvftQ&s")
+  username          String        @unique
+  password          String
+  musicFolder       String        @unique
+  musicFiles       MusicFile[]
+  playlists        Playlist[]
+}

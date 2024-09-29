@@ -1,0 +1,379 @@
+@use "./global.scss" as *;
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Dots:wght@400..700&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.removing-songs-notice {
+    position: fixed;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    transition-duration: 0.5s;
+}
+
+.removing-songs-stop-button:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.user-adding-song-go-back-wrapper {
+    margin-top: -5px;
+    position: fixed;
+    z-index: 10000000;
+    background-color: transparent;
+    margin-left: 5px;
+}
+
+.user-adding-song-go-back {
+    background-color: transparent;
+    color: lighten($text-1, 10%);
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+
+.user-adding-song-go-back:hover {
+    color: darken(white, 15%);
+}
+
+.selected-playlist-change-picture-button {
+    text-wrap: nowrap;
+}
+
+.selected-playlist-change-picture {
+   margin-left: 11px; 
+   margin-bottom: 7px;
+}
+
+.selected-playlist-sort-songs {
+    margin-left: 11px;
+}
+
+.selected-playlist-go-back-wrapper {
+    position: fixed;
+    z-index: 10000000;
+    margin: 5px;
+    background-color: transparent;
+    // height: 100%;
+    // width: 100%;
+    // background-color: ;
+    // display: flex;
+    // align-items: flex-end;
+    // justify-content: flex-end;
+    // right: 100%;
+    // position: absolute;
+    // display: flex;
+}
+
+.selected-playlist-go-back {
+    background-color: transparent;
+    text-wrap: nowrap;
+    color: $background-color;
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+
+.selected-playlist-go-back:hover {
+    color: $text-2;
+}
+
+.playlist-wrapper {
+    height: 175px;
+    width: 175px;
+    background-color: $odd;
+    position: relative;
+    cursor: pointer;
+}
+
+.playlist-display-content {
+    width: auto;
+    height: 100%;
+    padding-bottom: 10px;
+    background-color: $odd;
+    position: relative;
+}
+
+.playlist-display-wrapper {
+    z-index: -1;
+    // pointer-events: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    // max-height: auto;
+    gap: 10px;
+    max-height: 100%;
+    background-color: $odd;
+}
+
+.playlist-meta-grid {
+    width: 40%;
+    height: 100%;
+    background-color: transparent;
+    display: grid;
+    text-align: start;
+    // column-gap: 10px;
+    grid-template-columns: repeat(4, 0.5fr);
+    grid-template-rows: 43.75px repeat(2, calc(43.75 /2)) 43.75;
+    margin-bottom: 10px;
+}
+
+.selected-playlist-play-icon-wrapper {
+    cursor: pointer;
+}
+
+.selected-playlist-name-wrapper {
+    width: 500px;
+    width: calc(100% - 200px);
+    text-align: start;
+    justify-self: start;
+    background-color: #b31d1d;
+}
+
+.selected-playlist-name {
+    margin-left: 11px;
+    font-family: "Edu AU VIC WA NT Dots", cursive;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 30px;
+    // align-self:center;
+    // justify-self: center;
+    background-color: transparent;
+    text-align: start;
+    white-space: nowrap;
+    color: $background-color;
+    top: 0px;
+}
+
+.no-song-data-found {
+    background-color: $odd;
+}
+
+.no-song-data-found-text {
+    background-color: $odd;
+    color: $background-color;
+}
+
+.song-data-remove-song {
+    // background-color: black;
+    margin-right: 7px;
+}
+
+.song-data-inner-wrapper {
+    // height: 100%;
+    // max-height: 50%;
+    background-color: $odd;
+    border-top: 2px solid $background-color;
+    border-left: 2px solid $background-color;
+    border-right: 2px solid $background-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    flex-direction: column;
+    * {
+        transition-duration: 0.1s;
+    }
+    &:last-child {
+        border-bottom: 2px solid $background-color;
+    }
+}
+
+.song-data-inner-wrapper:hover {
+    * {
+        color: darken($text-1, 25%);
+    }
+}
+
+.song-data-artist {
+    background-color: transparent;
+    font-size: 12px;
+    color: black;
+}
+
+.song-data-title {
+    color: $background-color;
+    background-color: $odd;
+}
+
+.selected-album-picture {
+    transition: width 0.3s ease, height 0.3s ease;
+    background-color: $odd;
+    // border-bottom: 3px solid $background-color;
+    height: 150px;
+    width: 150px;
+}
+
+.playlist-current-song {
+    // z-index: -1;
+    // background-color: $odd;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}
+
+.playlist-current-song-label {
+    font-size: 14px;
+    background-color: $odd;
+    color: $background-color;
+}
+
+.playlist-current-song-artist {
+    background-color: $odd;
+    font-size: 18px;
+    color: $background-color;
+}
+
+.playlist-no-song-label {
+    background-color: $odd;
+    color: $background-color;
+}
+
+.playlists-wrapper {
+    background-color: transparent;
+    margin: 10px;
+    height: auto;
+    width: auto;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+}
+
+.playlist-image {
+    transition: width 0.3s ease, height 0.3s ease;
+    background-color: transparent;
+    display: inline-block;
+    height: 175px;
+    width: 175px;
+}
+
+.playlist-title-wrapper {
+    z-index: 5;
+    height: auto;
+    width: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+}
+
+.playlist-title {
+    color: yellow;
+    transition-duration: 100ms;
+    opacity: 0;
+    background-color: transparent;
+}
+
+.playlist-mode-wrapper {
+    height: 100vh;
+    width: 100vw;
+    padding: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.playlist-mode-content {
+    background-color: $odd;
+    overflow: scroll;
+    height: 100%;
+    width: 100%;
+    transition: filter 0.3s ease;
+
+    &.grayed-out {
+        filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+        /* Firefox 3.5+ */
+        filter: gray;
+        -webkit-filter: grayscale(100%);
+    }
+}
+
+.playlist-top-bar {
+    padding: 5px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $odd;
+    border-bottom: 3px solid $background-color;
+}
+
+.playlist-add-icon-wrapper { 
+    width: 100%;
+    right: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: transparent;
+    color: black;
+    cursor: pointer;
+}
+
+.playlist-create-new {
+    background-color: transparent;
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.playlist-create-new-label {
+    background-color: darken($odd, 2%);
+    padding: 5px;
+    color: $background-color;
+}
+
+.playlist-create-new-input {
+    outline: none;
+    border: 2px solid darken($border-dull, 10%);
+    text-align: center;
+    padding: 5px;
+    margin: 10px;
+    font-size: 12px;
+    height: 30px;
+    width: 250px;
+    border-radius: 8px;
+    transition-duration: 0.2s;
+}
+
+.playlist-create-new-submit {
+    color: $odd;
+    background-color: $background-color;
+    padding: 3px;
+    width: 80px;
+    border-radius: 20px;
+    transition-duration: 0.5s;
+    border: 2px $odd solid;
+}
+
+.playlist-create-new-submit:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.playlist-create-new-input:focus {
+    border: 2px solid darken($text-1, 25%);
+}
+
+.playlist-create-new-input:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.playlist-wrapper:hover .playlist-image {
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
+    filter: gray;
+    -webkit-filter: grayscale(100%);
+}
+
+.playlist-wrapper:hover .playlist-title {
+    opacity: 1;
+}

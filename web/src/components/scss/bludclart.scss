@@ -1,0 +1,276 @@
+@use "./global.scss" as *;
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.queue-wrapper {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-top: 10px;
+    z-index: 1001;
+    position: fixed;
+    width: 100vw;
+    overflow-y: auto;
+    max-height: 400px;
+    background-color: transparent;
+    pointer-events: none;
+}
+
+.queue-wrapper > * {
+    pointer-events: auto;
+}
+
+.margin-fix-other-ui {
+    margin-top: 10px;
+}
+
+.queue-inner-wrapper {
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    background-color: $odd;
+    border: 1px solid darken($background-color, 20%);
+    text-align: center;
+    width: 250px;
+}
+
+.queue-inner-wrapper:hover {
+    transition-duration: 0.3s;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.queue-message-nothing {
+    color: $background-color;
+    background-color: $odd;
+}
+
+.queue-song-name {
+    background-color: $odd;
+    color: $background-color;
+}
+
+.queue-remove-song {
+    background-color: $odd;
+    border: 2px solid $text-1;
+    color: $background-color;
+    cursor: pointer;
+    transition-duration: 250ms;
+}
+
+.queue-remove-song:hover {
+    cursor: pointer;
+    color: lighten($background-color, 40%);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.music-wrapper {
+    margin: 10px;
+    width: auto;
+    height: auto;
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    // grid-gap: 10px;
+}
+
+.album-image {
+    height: 200px;
+    width: 200px;
+    background-color: lighten($background-color, 5%);
+    object-fit: contain;
+    transition-duration: 0.5s;
+}
+
+.music-grid-wrapper {
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.music-content-wrapper {
+    z-index: 2;
+    position: relative;
+    display: inline-block;
+    height: 200px;
+    width: auto;
+}
+
+.music-data-wrapper {
+    z-index: 1000;
+    opacity: 1;
+    font-size: 12px;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    background-color: transparent;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    opacity: 0;
+}
+
+.music-title {
+    background-color: transparent;
+    color: lighten(#FFFF00, 20%);
+    font-weight: 600;
+    // opacity: 0;
+}
+
+.music-artist {
+    background-color: transparent;
+    color: lighten(#FFFF00, 20%);
+    // opacity: 0;
+}
+
+.music-album {
+    background-color: transparent;
+    color: lighten(#FFFF00, 20%);
+}
+
+.play-button {
+    z-index: 1000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $background-color;
+    border: none;
+    padding: 5px 20px;
+    cursor: pointer;
+    border-radius: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.queue-button {
+    // z-index: 1000;
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $background-color;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.music-content-wrapper:hover .album-image {
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
+    filter: gray;
+    -webkit-filter: grayscale(100%);
+}
+
+.music-content-wrapper:hover .queue-button {
+    opacity: 1;
+}
+
+.music-content-wrapper:hover .play-button {
+    opacity: 1;
+}
+
+.music-content-wrapper:hover .music-data-wrapper{
+    opacity: 1;
+}
+
+// .play-button:hover .album-image {
+//     filter: gray;
+//     -webkit-filter: grayscale(1);
+// }
+  
+@media (max-width: 669px) {
+    .music-wrapper {
+        grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+        img {
+            height: 185px;
+            width: 185px;
+            background-color: black;
+            object-fit: contain;
+        }
+    }
+    .music-content-wrapper {
+        height: 185px
+    }
+}
+
+@media (max-width: 624px) {
+    .music-wrapper {
+        grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+        img {
+            height: 175px;
+            width: 175px;
+            background-color: black;
+            object-fit: contain;
+        }
+    }
+    .music-content-wrapper {
+        height: 175px
+    }
+}
+
+@media (max-width: 594px) {
+    .music-wrapper {
+        grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+        img {
+            height: 175px;
+            width: 175px;
+            background-color: black;
+            object-fit: contain;
+        }
+    }
+    .music-content-wrapper {
+        height: 175px
+    }
+}
+
+@media (max-width: 444px) {
+    .music-wrapper {
+        grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+        img {
+            height: 175px;
+            width: 175px;
+            background-color: black;
+            object-fit: contain;
+        }
+    }
+    .music-content-wrapper {
+        height: 175px
+    }
+}
+
+@media (max-width: 420px) {
+    .music-wrapper {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        img {
+            height: 150px;
+            width: 150px;
+            background-color: black;
+            object-fit: contain;
+        }
+    }
+    .music-content-wrapper {
+        height: 150px
+    }
+}
+
+@media (max-width: 344px) {
+    .music-wrapper {
+        grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
+        img {
+            height: 125px;
+            width: 125px;
+            background-color: black;
+            object-fit: contain;
+        }
+    }
+    .music-content-wrapper {
+        height: 125px;
+    }
+}

@@ -1,0 +1,89 @@
+@use "../global.scss" as *;
+
+.profile {
+    top: 1px;
+    right: 0.75em;
+    z-index: 10000;
+    position: fixed;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: transparent;
+    gap: 10px;
+    padding-bottom: 10px;
+    transform: scale(0.9); /* Start slightly scaled down */
+    transition: background-color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+.profile-visible {
+    background-color: lighten($odd, 10%);
+    transform: scale(1);
+}
+
+.profile-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background-color: lighten($odd, 10%);
+}
+
+.profile-picture {
+    padding-top: 2px;
+    background-color: transparent;
+    top: 100px;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    object-fit: contain; 
+    cursor: pointer;
+}
+
+.profile-menu-search {
+    cursor: pointer;
+}
+
+.profile-menu-settings {
+    cursor: pointer;
+}
+
+.search-bar {
+    background-color: transparent;
+    z-index: 10000;
+    position: fixed;
+    height: 1em;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-bar-input {
+    outline: none;
+    border: 2px solid darken($border-dull, 10%);
+    text-align: center;
+    padding: 5px;
+    margin: 10px;
+    font-size: 12px;
+    height: 30px;
+    width: 250px;
+    border-radius: 8px;
+    transition-duration: 0.2s;
+}
+
+.skizzy-button {
+    cursor: pointer;
+}
+
+.letdemshotsfly-button {
+    cursor: pointer;
+}
+
+.search-bar-input:focus {
+    border: 2px solid $text-1;
+}
+  
+.search-bar-input:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
