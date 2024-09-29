@@ -12,6 +12,9 @@ import indexRouter from "./routes/indexRoutes";
 import playlistRouter from "./routes/user/playlist";
 import userRouter from "./routes/user/user";
 import downloadRouter from "./routes/download/download";
+import { exit } from "process";
+import { readFileSync } from "fs";
+import https from 'https'
 
 const prisma = new PrismaClient();
 
@@ -20,6 +23,16 @@ app.use(bodyParser())
 app.use(busboy({immediate: true}));
 
 dotenv.config();
+
+let environment = env.get('NODE_ENV').required().asString()
+if (environment !== 'prod' && environment !== 'dev') {
+    console.log(clc.redBright('enter a correct environment'))
+    exit()
+}
+
+if (environment == 'prod') {
+
+}
 
 setEnvironment(
     env.get("port").required().asString(), 
@@ -30,7 +43,7 @@ setEnvironment(
 (async () => {
     /* Debug for playlists */
 
-    //reset 2
+    // reset 2
     // try {
     //     await prisma.playlist.deleteMany({})
     // } catch {
@@ -73,11 +86,19 @@ setEnvironment(
 
     app.use('/', indexRouter)
 
-	app.listen(appPort, () => {
-		console.log(
-			clc.blueBright(
-				`fucking god bine server running on http://dev.bmt:${appPort}`
-			)
-		);
-	});
+    if (environment == 'prod') {
+        let opts = {
+            key: readFileSync(env.get('httpsCert').required().asString()),
+            cert: readFileSync(env.get('httpsKey').required().asString())
+        }
+        https.createServer(opts, app).listen(appPort)
+    } else {
+        app.listen(appPort, () => {
+            console.log(
+                clc.blueBright(
+                    `fucking god bine server running on http://dev.bmt:${appPort}`
+                )
+            );
+        });
+    }
 })();
