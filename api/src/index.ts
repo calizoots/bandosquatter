@@ -88,8 +88,8 @@ setEnvironment(
 
     if (environment == 'prod') {
         let opts = {
-            key: readFileSync(env.get('httpsCert').required().asString()),
-            cert: readFileSync(env.get('httpsKey').required().asString())
+            key: readFileSync(env.get('httpsKey').required().asString()),
+            cert: readFileSync(env.get('httpsCert').required().asString())
         }
         https.createServer(opts, app).listen(appPort)
     } else {
