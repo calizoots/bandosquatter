@@ -12,7 +12,7 @@ RUN yarn build
 
 FROM nginx:alpine
 
-COPY prod/ /app
+COPY prod/ /app/prod
 
 COPY prod/nginx.conf /etc/nginx/conf.d/default.conf
 
