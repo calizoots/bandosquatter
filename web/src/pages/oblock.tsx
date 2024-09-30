@@ -1,10 +1,10 @@
 import Cookies from "js-cookie"
 import axios from "axios"
 import { useEffect, useState } from "preact/hooks"
-import { withAuth } from "../etc/withAuth"
+import { withAuth } from "../methods/withAuth"
 import { UserData } from "./bludclart"
-import "../scss/oblock.scss"
-import { hostname } from "../etc/global"
+import "./styles/oblock.scss"
+import { hostname } from "../global/global"
 
 let oblockpage = () => {
     let [userData, setUserData] = useState<UserData>()

@@ -1,4 +1,4 @@
-import '../scss/MusicPlayer.scss'
+import './styles/MusicPlayer.scss'
 import React, { useEffect, useRef, useState } from 'preact/compat'
 import PauseIcon from '@mui/icons-material/Pause';
 import PlayArrow from '@mui/icons-material/PlayArrow'
@@ -11,8 +11,8 @@ import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import ShuffleIcon from '@mui/icons-material/Shuffle';
 import Cookies from 'js-cookie';
 import axios from 'axios';
-import { hostname } from './global';
-import Player from './damusiccontrol/musicplayer';
+import { hostname } from '../global/global';
+import Player from './MusicPlayerThatPlaysMusic';
 
 let bgColor: React.JSX.CSSProperties = {backgroundColor: "#4D566F"}
 

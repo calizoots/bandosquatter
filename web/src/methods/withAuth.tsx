@@ -1,7 +1,7 @@
 import { Component, ComponentType } from 'preact';
 import Cookies from 'js-cookie';
 import axios from 'axios';
-import { hostname } from './global';
+import { hostname } from '../global/global';
 import FourOhFour from '../pages/404';
 
 interface WithAuthProps { }

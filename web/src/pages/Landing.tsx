@@ -1,10 +1,10 @@
-import '../scss/Landing.scss'
-import killyder from '../../assets/realbadman.png'
+import './styles/Landing.scss'
+import killyder from '../assets/realbadman.png'
 import { useState } from 'preact/hooks'
 import axios from 'axios'
 import Cookies from 'js-cookie'
 import { route } from 'preact-router'
-import { hostname } from '../etc/global'
+import { hostname } from '../global/global'
 
 export let Landing = () => {
     let [user, setUser] = useState("")

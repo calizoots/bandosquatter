@@ -1,9 +1,9 @@
 import { render } from 'preact'
 import Router, { Route } from 'preact-router'
-import { Landing } from './components/pages/Landing.tsx'
-import fourofour from './components/pages/404.tsx'
-import { bludclart } from './components/pages/bludclart.tsx'
-import { oblock } from './components/pages/oblock.tsx'
+import { Landing } from './pages/Landing.tsx'
+import fourofour from './pages/404.tsx'
+import { bludclart } from './pages/bludclart.tsx'
+import { oblock } from './pages/oblock.tsx'
 
 const Main = () => (
     <Router>

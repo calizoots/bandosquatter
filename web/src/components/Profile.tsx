@@ -1,5 +1,5 @@
 import { FunctionalComponent, JSX } from 'preact';
-import "../scss/profile/profile.scss"
+import "./styles/profile.scss"
 
 interface ProfileProps {
     profilePicture: string;
