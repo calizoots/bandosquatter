@@ -15,7 +15,9 @@ services:
             sh -c " npx prisma migrate dev && yarn addDefault && yarn serve "
 
     web:
-        build: ./web
+        build:
+            context: ./web
+            dockerfile: Dockerfile.dev
         ports:
             - "5173:5173"
         volumes:
