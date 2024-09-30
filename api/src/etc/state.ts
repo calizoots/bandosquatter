@@ -1,8 +1,8 @@
 import { readFileSync } from 'fs';
 import { Client } from 'genius-lyrics'
-const defaultImageFile = "/Users/calizoots/alfie/curiousbine/music/api/src/etc/default/default.jpg";
+const defaultImageFile = "/usr/src/app/src/etc/default/default.jpg";
 export const dfiBuffer = readFileSync(defaultImageFile);
-export const localurl = "http://192.168.8.116:3001";
+export const localurl = "http://localhost:3001";
 export const genieApiKey = "e-40pEaFClFt_BhixboQUrEIxYL_f1hSWTbCfCMp6kklGDaEnAS3FcV7BMOzWt7o"
 export const genie = new Client(genieApiKey)
 export const credentials = {

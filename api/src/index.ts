@@ -8,7 +8,7 @@ import bodyParser from 'body-parser';
 import busboy from 'connect-busboy';
 import { setEnvironment, appPort, musicFolder, dfiBuffer, genie } from "./etc/state";
 import { doThingsWithMusic } from "./helpers/helper";
-import indexRouter from "./routes/indexRoutes";
+import indexRouter from "./routes/main";
 import playlistRouter from "./routes/user/playlist";
 import userRouter from "./routes/user/user";
 import downloadRouter from "./routes/download/download";
@@ -49,6 +49,8 @@ setEnvironment(
     // } catch {
     //     console.log(clc.bold('delete failed probably non existant'))
     // }
+
+    // hello
 
     // let me = await prisma.user.findUnique({
     //     where: {

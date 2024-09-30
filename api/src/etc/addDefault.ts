@@ -22,16 +22,20 @@ bcrypt.hash(passwordToHash, saltRounds, function(_err, hash) {
     // check error here
     // Then save password in DB with prisma
     (async() => {
-        await prisma.user.create({
-            data: {
-                //... (give all other user data here)
-                password: hash,
-                username: username,       
-                profilePicture: "https://i.pinimg.com/564x/bf/d2/8a/bfd28a52c107006fcfdb8d36ca80c1f3.jpg",
-                musicFolder: `${files}/${username}`
-            }
-        })
-        console.log('hello')
+        try {
+            await prisma.user.create({
+                data: {
+                    //... (give all other user data here)
+                    password: hash,
+                    username: username,       
+                    profilePicture: "https://i.pinimg.com/564x/bf/d2/8a/bfd28a52c107006fcfdb8d36ca80c1f3.jpg",
+                    musicFolder: `${files}/${username}`
+                }
+            })
+            console.log('done!!!')
+        } catch {
+            console.log('user already exists')
+        }
     })().catch( (prismaError) => {console.log(prismaError)} )
 
 });

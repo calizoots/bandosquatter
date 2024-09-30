@@ -7,18 +7,18 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    "serve": "nodemon --watch 'src/**' --ext 'ts,json' --ignore 'src/**/*.spec.ts' --exec 'tsx src/index.ts'"
+    "serve": "nodemon --watch 'src/**' --ext 'ts,json' --ignore 'src/**/*.spec.ts' --exec 'tsx src/index.ts'",
+    "prod": "tsx src/index.ts",
+    "addDefault": "tsx src/etc/addDefault.ts"
   },
   "dependencies": {
     "@prisma/client": "5.19.1",
     "@types/bcrypt": "^5.0.2",
     "@types/cli-color": "^2.0.6",
     "@types/cors": "^2.8.17",
-    "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.21",
     "@types/jsonwebtoken": "^9.0.6",
     "@types/node": "^22.5.4",
-    "acoustid": "^1.2.1",
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.3",
     "cli-color": "^2.0.4",

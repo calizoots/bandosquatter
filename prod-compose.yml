@@ -1,0 +1,38 @@
+services:
+    api:
+        build: ./api
+        ports:
+            - "3001:3001"
+        volumes:
+            - ./api:/usr/src/app
+            - /usr/src/app/node_modules
+        environment:
+            NODE_ENV: prod
+            DATABASE_URL: postgres://user:password@db:5432/music
+        depends_on:
+            - db
+        command: >
+            sh -c " npx prisma migrate deploy && yarn addDefault && yarn prod "
+
+    web:
+        build:
+        context: ./web
+        dockerfile: Dockerfile.prod
+        ports:
+            - "80:80"
+        depends_on:
+            - api
+
+    db:
+        image: postgres:15
+        environment:
+            POSTGRES_USER: user
+            POSTGRES_PASSWORD: password
+            POSTGRES_DB: music
+        volumes:
+            - postgres_data:/var/lib/postgresql/data
+        ports:
+            - "5432:5432"
+
+volumes:
+    postgres_data:
