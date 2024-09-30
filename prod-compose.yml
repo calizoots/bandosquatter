@@ -16,8 +16,8 @@ services:
 
     web:
         build:
-        context: ./web
-        dockerfile: Dockerfile.prod
+            context: ./web
+            dockerfile: Dockerfile.prod
         ports:
             - "80:80"
         depends_on:
