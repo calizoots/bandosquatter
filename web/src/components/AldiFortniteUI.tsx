@@ -12,7 +12,7 @@ import Cookies from 'js-cookie';
 import Queue from "./smallbits/Queue";
 import { hostname } from "../global/global";
 import { Profile } from "./Profile"
-import { State } from "../pages/bludclart"
+import State from "../types/bludclart"
 import "./styles/profile.scss"
 import "../pages/styles/bludclart.scss"
 import "./styles/AldiFortniteUI.scss"
