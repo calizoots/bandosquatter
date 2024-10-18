@@ -6,7 +6,7 @@ const fourofour = () => {
             <span style={{ fontSize: '50px' }}>🫤</span>
             <span className="incon fourohfourtext">404</span>
             <span>🔮this shit dont fucking exist🔮</span>
-            <span onClick={() => window.history.go(-1)} className="fofgoback">
+            <span onClick={() => (window.location.href = '/')} className="fofgoback">
                 go back?
             </span>
         </div>

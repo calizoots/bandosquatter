@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { AuthenticatedRequest, authenticatedShi, generateAccessToken } from '../helpers/jwt';
-import bcrypt from 'bcrypt'
+import bcrypt from 'bcrypt';
 import { PrismaClient } from '@prisma/client';
 import { errorCodes, jwtSecret, dfiBuffer, genie } from '../etc/state';
 import multer from 'multer';
@@ -11,12 +11,12 @@ const upload = multer();
 
 const indexRouter = Router();
 
-indexRouter.post("/verify", authenticatedShi, (req: AuthenticatedRequest, res) => {
-    console.log(req.user)
-    res.json({jwt: req.user})
+indexRouter.post('/verify', authenticatedShi, (req: AuthenticatedRequest, res) => {
+    console.log(req.user);
+    res.json({ jwt: req.user });
 });
 
-indexRouter.post("/login", async (req, res) => {
+indexRouter.post('/login', async (req, res) => {
     try {
         let username = req.body.user;
         let password = req.body.pass;
@@ -37,41 +37,42 @@ indexRouter.post("/login", async (req, res) => {
             } else {
                 res.json(errorCodes.wrongUserOrPass);
             }
-        } 
+        }
     } catch (e) {
-        console.log(e)
+        console.log(e);
         res.json(errorCodes.noDataProvided);
     }
 });
 
-indexRouter.post("/upload", upload.single('file'), authenticatedShi, async (req: AuthenticatedRequest, res) => {
+indexRouter.post('/upload', upload.single('file'), authenticatedShi, async (req: AuthenticatedRequest, res) => {
     let user = await prisma.user.findUnique({
         where: {
-            username: req.user.id
+            username: req.user.id,
         },
         include: {
-            musicFiles: true
-        }
+            musicFiles: true,
+        },
     });
     if (user) {
-        req.pipe(req.busboy)
+        req.pipe(req.busboy);
         if (req.file) {
-            fs.writeFile(`${user.musicFolder}/${req.file.originalname}`, req.file?.buffer, async (err) => {
+            fs.writeFile(`${user.musicFolder}/${req.file.originalname}`, req.file?.buffer, async err => {
                 if (err) {
                     console.error('error writing file:', err);
                     return res.status(500).json({ message: 'failed to save' });
                 }
-        
-                await doThingsWithMusic(dfiBuffer, genie, prisma); 
+
+                await doThingsWithMusic(dfiBuffer, genie, prisma);
                 console.log(`mp3 saved to ${req.file?.originalname}`);
                 res.json({ message: 'upload success' });
-            })
+            });
         }
-    } 
-})
+    }
+});
 
-indexRouter.get("/", (_req, res) => {
-    res.send("sum stuff");
+indexRouter.get('/', (_req, res) => {
+    res.send('sum stuff');
 });
 
 export default indexRouter;
+

@@ -3,5 +3,7 @@ node_modules
 .env
 
 *.bak
+src/etc/default/state.ts
+googlekeyfilenat.json
 prisma/migrations
 files
