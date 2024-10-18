@@ -36,7 +36,7 @@ i can do stuff in react if someone wan to cheer my spirit give money
 
 ## screenshots
 
-![Screenshot](screenshots/graphicalview/graphicalmode.png)
+[*See*](Screenshots.md)
 
 ## commands to start
 
