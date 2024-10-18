@@ -1,14 +1,10 @@
 # TODO
 
-## Ideas
+# maybe before?
 
-Build a production environment
+complete rewrite maybe???
 
-Soundcloud download,
-Youtube download,
-Make ui fully functional on mobile devices
-
-## After
+# current
 
 app development!!!!
 
