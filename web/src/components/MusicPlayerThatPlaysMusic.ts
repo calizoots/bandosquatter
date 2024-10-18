@@ -1,4 +1,4 @@
-import { musicFile, QueueType } from "../MusicPlayer";
+import { musicFile, QueueType } from "./MusicPlayer";
 
 let queueCounterIncrement = 0;
 
