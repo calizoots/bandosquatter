@@ -12,6 +12,7 @@
     "addDefault": "tsx src/etc/addDefault.ts"
   },
   "dependencies": {
+    "@google-cloud/storage": "^7.13.0",
     "@prisma/client": "5.19.1",
     "@types/bcrypt": "^5.0.2",
     "@types/cli-color": "^2.0.6",

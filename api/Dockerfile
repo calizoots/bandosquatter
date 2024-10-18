@@ -4,6 +4,8 @@ RUN npm install -g node-pre-gyp && npm install -g nodemon && npm install -g tsx
 
 WORKDIR /usr/src/app
 
+RUN yarn 
+
 COPY package*.json yarn.lock ./ 
 
 RUN yarn
