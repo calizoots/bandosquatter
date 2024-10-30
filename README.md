@@ -20,7 +20,7 @@ It works good on your local system but over the internet nuh nuh nuh.
 4. a queue
 5. playlists
 6. volume
-7.shuffle
+7. shuffle
 8. search
 9. and a nice interface
 pretty standard things there
