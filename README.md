@@ -1,7 +1,5 @@
 # this is the bandosquatter
 
-it is running on bandosquatter.com i be shinin
-
 ## word
 
 THIS SHI ISNT DONE
