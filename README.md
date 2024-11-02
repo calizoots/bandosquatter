@@ -6,7 +6,7 @@ THIS SHI ISNT DONE
 
 i made this for a friend spontaiously he said some about it i said it was easy.
 ahlie den got carried away made it an effort over a few weeks added serveral thing i use.
-this my self no one could commericalise thisits too slow the bundle size is very high.
+this my self no one could commericalise thi shi too slow the bundle size is very high.
 I plan on making a way better version but I have other things to do now.
 It works good on your local system but over the internet nuh nuh nuh.
 
