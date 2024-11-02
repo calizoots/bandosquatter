@@ -48,6 +48,15 @@ then run
 docker-compose up
 ```
 
+it has just occurred to me that i never told people how to add music manually
+
+in the docker container named something like bandosquatter-api there is a directory that is created /usr/src/app/files/*username*/
+
+in that dir you can paste that you can do that in a few ways
+
+1. in the folder you cloned the repo it should have made the same folder in the ./api/files/*yourusername*/ add your files here restart the website. it is defaulted to run with nodemon so you can also hot reload the code in the docker container happy developing!!!!
+3. or if you posess the knowledge create a docker volume mount it to the /usr/src/app/files/*yourusername*
+
 go to
 
 http://localhost:5173
