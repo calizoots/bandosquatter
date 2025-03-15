@@ -28,9 +28,10 @@ your password are encrypted in the database
 
 ## u wan contribute
 
-api needs rewrite in go. i decent at go could probably maintain it but not do a rewrite i aint that good ini
+made this project 8 months ago... if i where to do it now i would go about it completely differently
+if theres traction i would rewrite but i got better thing to do ibr <3
 
-i can do stuff in react if someone wan to cheer my spirit give money
+i mean rewite like a complete rewrite from head to toe. but keep the aesthetic!!!
 
 ## screenshots
 
