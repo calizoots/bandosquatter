@@ -5,6 +5,7 @@
 #
 # already existing elements were commented out
 
+/.vite
 **/.DS_Store
 /target
 **/node_modules/
