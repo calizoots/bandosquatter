@@ -7,7 +7,7 @@
 
 /.vite
 **/.DS_Store
-/target
+**/target
 **/node_modules/
 **/package-lock.json
 /html/**
