@@ -5,9 +5,10 @@
 #
 # already existing elements were commented out
 
-#/target
+/target
 **/node_modules/
 **/package-lock.json
+html/**
 music/
 **/*.rs.bk
 *~
