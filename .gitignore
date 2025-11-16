@@ -10,8 +10,8 @@
 /target
 **/node_modules/
 **/package-lock.json
-html/**
-music/
+/html/**
+/music
 **/*.rs.bk
 *~
 \#*\#
