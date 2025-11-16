@@ -5,12 +5,11 @@
 #
 # already existing elements were commented out
 
-/.vite
+**/.vite
 **/.DS_Store
 **/target
 **/node_modules/
 **/package-lock.json
-/html/**
 /music
 **/*.rs.bk
 *~

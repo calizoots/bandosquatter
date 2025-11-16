@@ -277,7 +277,7 @@ pub fn stop_daemon(_args: Vec<String>) -> i32 {
         return 1
     }
 
-    let pid_str = match ead_to_string(FILES.pid.as_path()) {
+    let pid_str = match read_to_string(FILES.pid.as_path()) {
         Ok(s) => s,
         Err(e) => {
             log!(LogLevel::Err, "failed to read pid file: {}", e);

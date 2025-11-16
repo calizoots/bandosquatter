@@ -90,6 +90,16 @@ async fn embedded_service(uri: Uri) -> impl IntoResponse {
 }
 
 pub fn create_app_routes() -> Router {
+    let cors = CorsLayer::new()
+        .allow_origin(AllowOrigin::list([
+            "http://localhost:3000".parse::<HeaderValue>().unwrap(),
+            "http://127.0.0.1:3000".parse::<HeaderValue>().unwrap(),
+            "http://[::1]:3000".parse::<HeaderValue>().unwrap(),
+        ]))
+        .allow_methods([Method::GET, Method::POST])
+        .allow_headers([header::CONTENT_TYPE, header::ACCEPT])
+        .allow_credentials(true);
+
     if cfg!(debug_assertions) {
         let fallback_service = service_fn(|req: Request<Body>| async move {
             let uri_path = req.uri().path().trim_start_matches('/');
@@ -133,9 +143,13 @@ pub fn create_app_routes() -> Router {
             )
         });
 
-        Router::new().nest_service("/", service).layer(CompressionLayer::new())
+        Router::new().nest_service("/", service)
+            .layer(CompressionLayer::new())
+            .layer(cors)
     } else {
-        Router::new().fallback(|uri: Uri| async move { embedded_service(uri).await }).layer(CompressionLayer::new())
+        Router::new().fallback(|uri: Uri| async move { embedded_service(uri).await })
+            .layer(CompressionLayer::new())
+            .layer(cors)
     }
 }
 
@@ -1006,7 +1020,11 @@ pub fn create_api_routes(state: AppState) -> Router {
     let cors = CorsLayer::new()
         .allow_origin(AllowOrigin::list([
             "http://localhost:5173".parse::<HeaderValue>().unwrap(),
+            "http://127.0.0.1:5173".parse::<HeaderValue>().unwrap(),
+            "http://[::1]:5173".parse::<HeaderValue>().unwrap(),
             "http://localhost:8080".parse::<HeaderValue>().unwrap(),
+            "http://127.0.0.1:8080".parse::<HeaderValue>().unwrap(),
+            "http://[::1]:8080".parse::<HeaderValue>().unwrap(),
         ]))
         .allow_methods([Method::GET, Method::POST])
         .allow_headers([header::CONTENT_TYPE, header::ACCEPT])
