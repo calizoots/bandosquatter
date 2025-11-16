@@ -12,7 +12,7 @@ Some of the new feautres:
 
 ## Screenshots
 
-here -->
+[here](https://github.com/calizoots/bandosquatter/blob/staging/Screenshots.md)
 
 ## Getting Started
 
@@ -22,7 +22,7 @@ git clone https://github.com/calizoots/bandosquatter.git
 cd bandosquatter
 cargo run start
 ```
-This will start the UI on `localhost:8080` and the api on `localhost:3000`
+This will start the UI on `http://localhost:8080` and the api on `http://localhost:3000`
 <br>
 The logs are at your temporary directory /bandosquatter/bq.out.log & bq.err.log
 <br>
@@ -38,3 +38,7 @@ Then to turn off
 ```
 cargo run stop
 ```
+
+### note
+
+made with lots of love - s.c <3
