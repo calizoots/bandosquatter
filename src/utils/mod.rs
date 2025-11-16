@@ -1,0 +1,35 @@
+pub mod cli;
+
+pub type AnyError<T> = Result<T, Box<dyn std::error::Error>>;
+
+#[allow(dead_code)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum LogLevel {
+    Info,
+    Err,
+    Warn,
+    Debug,
+}
+
+impl LogLevel {
+    pub fn resolve_message(&self) -> &'static str {
+        match self {
+            LogLevel::Info => "\x1b[34m[info]:\x1b[0m",
+            LogLevel::Err => "\x1b[31m[error]:\x1b[0m",
+            LogLevel::Warn => "\x1b[33m[warning]:\x1b[0m",
+            LogLevel::Debug => "\x1b[38;5;208m[debug]:\x1b[0m",
+        }
+    }
+}
+
+#[macro_export]
+macro_rules! log {
+    ($level:expr, $($arg:tt)*) => ({
+        if matches!($level, $crate::utils::LogLevel::Debug) && !cfg!(debug_assertions) {
+            // skip debug logs in release mode
+        } else {
+            print!("{} ", $level.resolve_message());
+            println!($($arg)*);
+        }
+    })
+}

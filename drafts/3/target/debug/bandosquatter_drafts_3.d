@@ -1,0 +1,1 @@
+/Users/crack/Bang/bandosquatter/drafts/3/target/debug/bandosquatter_drafts_3: /Users/crack/Bang/bandosquatter/drafts/3/src/main.rs /Users/crack/Bang/bandosquatter/drafts/3/src/utils/log.rs /Users/crack/Bang/bandosquatter/drafts/3/src/utils/mod.rs /Users/crack/Bang/bandosquatter/drafts/3/src/youtube.rs

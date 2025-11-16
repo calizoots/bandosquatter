@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+    margin: 0;
+    button:hover {
+        cursor: pointer;   
+    };
+}
+
+:root {
+    --bg: #4D566F;
+    --bgaccent: #383F51;
+    --surface: #D5CAD6;
+    --primary: hsl(224°, 19%, 37%);
+    --accent: #4D6698;
+    --text: #EFEFF0;
+    --text2: #36476A;
+}
+
+#login-container {
+    height: 100vh;
+    background-color: var(--bg);    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+#submit {
+    background-color: var(--surface);
+    border: solid 2px var(--text2);
+    width: 6em;
+    border-radius: 10px;
+    color: var(--text2);
+    transition-duration: 0.2s;
+}
+
+#realskengman {
+  max-height: 150px;
+  max-width: 150px;
+  width: auto;
+  height: auto;
+}
+
+#username, #password {
+    background-color: var(--surface);
+    border: none;
+    outline: none;
+    height: 1.35em;
+    color: var(--text2);
+    border-radius: 30px;
+    text-align: center;
+    width: 11em;
+    transition-duration: 0.2s;
+}
+
+#username:focus, #password:focus, #submit:hover {
+    box-shadow: 0 10px 14px 0 rgba(0,0,0,0.35), 0 20px 60px 0 rgba(0,0,0,0.3);
+}

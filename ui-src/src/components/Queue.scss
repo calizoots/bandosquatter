@@ -1,0 +1,85 @@
+@use "sass:color";
+@use "../global.scss" as *;
+
+.margin-fix-other-ui {
+    margin-top: 10px;
+}
+
+.queue-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+    top: 0;
+    z-index: 1001;
+    position: fixed;
+    width: calc(100vw - 40px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    max-height: 400px;
+    background-color: transparent;
+    pointer-events: none;
+}
+
+.queue-wrapper > * {
+    pointer-events: auto;
+}
+
+.queue-inner-wrapper {
+    z-index: 1001;
+    display: flex;
+    justify-content: center;
+    flex-drection: column;
+    align-content: center;
+    // background-color: $odd-color;
+    background-color: transparent;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(5px);
+    border: 1px solid color.adjust($bg-color, $lightness: -20%);
+    text-align: center;
+    color: $text-color;
+    width: clamp(200px, 16vw, 250px);
+
+    font-size: clamp(8px, 2vh, 2em)
+}
+
+.queue-inner-wrapper:hover {
+    transition-duration: 0.3s;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.queue-message-nothing {
+    text-align: center;
+    padding: 1px;
+    // background-color: $odd-color;
+}
+
+.queue-song-name {
+    // background-color: $odd-color;
+}
+
+.queue-remove-song {
+    // background-color: $odd-color;
+    border: 2px solid rgb(0,0,0,0.15);
+    cursor: pointer;
+    transition-duration: 250ms;
+}
+
+.queue-remove-song:hover {
+    cursor: pointer;
+    color: color.adjust($text-color, $lightness: -10%);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+@media (prefers-color-scheme: light) {
+    .queue-inner-wrapper {
+        color: $text-other;
+    }
+    .queue-remove-song:hover {
+        color: color.adjust($text-other, $lightness: -20%);
+    }
+    .queue-innner-wrapper:hover {
+        box-shadow: none;
+    }
+}

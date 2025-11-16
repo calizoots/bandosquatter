@@ -1,0 +1,1 @@
+/Users/crack/Bang/bandosquatter/target/debug/bandosquatter: /Users/crack/Bang/bandosquatter/src/background.rs /Users/crack/Bang/bandosquatter/src/main.rs /Users/crack/Bang/bandosquatter/src/server.rs /Users/crack/Bang/bandosquatter/src/utils/cli.rs /Users/crack/Bang/bandosquatter/src/utils/log.rs /Users/crack/Bang/bandosquatter/src/utils/mod.rs

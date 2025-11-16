@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<head>
+   <link rel="stylesheet" href="/assets/404.css"/> 
+    <script src="/assets/htmx.min.js"></script>
+</head>
+
+<body>
+    <div id="lost-container">
+        <span style="font-size: 75px; margin-bottom: 10px;">🫤</span>
+        <span class="incon fourohfourtext">404</span>
+        <span>🔮this shit dont fucking exist🔮</span>
+        <span class="fofgoback" hx-on:click="
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = '/';
+            }
+        ">
+            go back?
+        </span>
+    </div>
+</body>

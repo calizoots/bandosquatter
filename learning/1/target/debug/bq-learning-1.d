@@ -1,0 +1,1 @@
+/Users/crack/Bang/bandosquatter/learning/1/target/debug/bq-learning-1: /Users/crack/Bang/bandosquatter/learning/1/src/background.rs /Users/crack/Bang/bandosquatter/learning/1/src/cli/mod.rs /Users/crack/Bang/bandosquatter/learning/1/src/logger/mod.rs /Users/crack/Bang/bandosquatter/learning/1/src/main.rs

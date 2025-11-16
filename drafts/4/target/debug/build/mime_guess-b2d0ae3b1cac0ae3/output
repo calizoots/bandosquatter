@@ -1,0 +1,1 @@
+cargo:rustc-env=MIME_TYPES_GENERATED_PATH=/Users/crack/Bang/bandosquatter/target/debug/build/mime_guess-b2d0ae3b1cac0ae3/out/mime_types_generated.rs

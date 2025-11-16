@@ -1,0 +1,84 @@
+@use 'sass:color';
+@use "../global.scss" as *;
+
+* {
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    // background-color: $bg-color;
+    color: color.adjust($text-color, $lightness: -10%);
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.realskengman {
+    max-height: clamp(225px, 20vh, 250px);
+    max-width: clamp(225px, 20vh, 250px);
+    width: auto;
+    height: auto;
+}
+
+.login-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-input {
+    outline: none;
+    border: 2px solid color.adjust($border-dull, $lightness: -10%);
+    text-align: center;
+    padding: 1em;
+    margin: 10px;
+    height: 30px;
+    width: clamp(140px, 30vw, 170px);
+    border-radius: 8px;
+    transition-duration: 0.2s;
+}
+
+.login-input:focus {
+    border: 2px solid $text-color;
+}
+
+.login-input:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.login-button {
+    border: 1px color.adjust($bg-color, $lightness: -10%) solid;
+    background-color: color.adjust($bg-color, $lightness: -5%);
+    border-radius: 8px;
+    margin-top: 3px;
+    padding: clamp(0.25rem, 1vw, 0.5rem) clamp(0.5rem, 3vw, 2rem);
+    transition-duration: 0.5s;
+}
+
+.login-button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.34), 0 17px 50px 0 rgba(0,0,0,0.35);
+    background-color: color.adjust($bg-color, $lightness: -25%);
+    border: 1px solid color.adjust($bg-color, $lightness: -25%);
+}
+
+@media (prefers-color-scheme: light) {
+    .login-input {
+        color: $bg-color;
+    }
+    .login-button {
+        background-color: $text-other; 
+        color: $bg-color;
+    }
+    .login-button:hover {
+        color: $text-color;
+    }
+}

@@ -1,0 +1,66 @@
+@use 'sass:color';
+@use "../global.scss" as *;
+
+.bs-error-wrapper {
+    // position: fixed;
+
+    // right: 0;
+    // top: 0;
+
+    margin-top: 1rem;
+    margin-right: 1rem;
+    padding: 1rem 1rem;
+
+    color: $text-color;
+
+    font-size: clamp(10px, 1vw, 14px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    background-color: transparent;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(5px);
+
+    border: 1px solid $text-color;
+    border-radius: 6px;
+
+    text-align: center;
+
+    opacity: 0;
+    transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &.show {
+        opacity: 1;
+    }
+
+    @media (max-width: 600px) {
+        padding: 0.8rem 1rem;
+        font-size: clamp(10px, 2vw, 16px);
+    }
+}
+
+.bs-error-wrapper strong {
+    color: $bg-light-accent; // for emphasis
+}
+
+.bs-error-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.bs-error-icon {
+    height: 18px;
+    width: 18px;
+    fill: $text-color;
+}
+
+@media (prefers-color-scheme: light) {
+    .bs-error-card span {
+        color: $bg-color;
+    }
+    .bs-error-icon {
+        fill: $bg-color;
+    }
+}
